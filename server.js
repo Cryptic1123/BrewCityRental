@@ -25,7 +25,8 @@ app.use(express.static("."));
 
 // MySQL Connection Pool
 const pool = mysql.createPool({
-  host: process.env.DB_HOST,
+  host: process.env.DB_HOST || "localhost",
+  port: Number(process.env.DB_PORT || 3306),
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
@@ -38,23 +39,16 @@ const pool = mysql.createPool({
 pool
   .getConnection()
   .then((connection) => {
-    console.log("✓ Connected to MySQL database: brewcity");
+    console.log("Database connected successfully");
     connection.release();
   })
   .catch((error) => {
-    console.error("✗ Database connection failed:", error.message);
-    console.error(
-      '  Make sure MySQL is running and the "brewcity" database exists.',
-    );
-    console.error(
-      "  Default connection: localhost, user: root, password: (empty)",
-    );
+    console.error("Database connection failed:", error.message);
   });
 
-app.get("/api/health", (req, res) => {
-  res.json({ status: "Server is running", database: "brewcity" });
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`BCR Prototype Server Running on port ${PORT}`)
 });
-
 app.get("/api/customers", async (req, res) => {
   try {
     const connection = await pool.getConnection();
