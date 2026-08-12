@@ -15,7 +15,7 @@ import crypto from "crypto";
 //require("dotenv").config();
 
 const app = express();
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -23,10 +23,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("."));
 
+console.log({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_NAME,
+  passwordLoaded: Boolean(process.env.DB_PASSWORD)
+});
+
 // MySQL Connection Pool
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  port: Number(process.env.DB_PORT || 3306),
+  host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
@@ -39,13 +45,22 @@ const pool = mysql.createPool({
 pool
   .getConnection()
   .then((connection) => {
-    console.log("Database connected successfully");
+    console.log("✓ Connected to MySQL database: brewcity");
     connection.release();
   })
   .catch((error) => {
-    console.error("Database connection failed:", error.message);
+    console.error("✗ Database connection failed:", error.message);
+    console.error(
+      '  Make sure MySQL is running and the "brewcity" database exists.',
+    );
+    console.error(
+      "  Default connection: localhost, user: root, password: (empty)",
+    );
   });
 
+app.get("/api/health", (req, res) => {
+  res.json({ status: "Server is running", database: "brewcity" });
+});
 
 app.get("/api/customers", async (req, res) => {
   try {
@@ -1281,8 +1296,7 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(PORT,"0.0.0.0", () => {
-
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`\n╔════════════════════════════════════╗`);
   console.log(`║   BCR Prototype Server Running     ║`);
   console.log(
