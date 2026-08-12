@@ -292,6 +292,8 @@ function performMovieSearch() {
   const genre = document.getElementById("searchGenre")?.value || "";
 
   const apiUrl = `${apiBaseUrl}/api/movies/search`;
+  console.log(`Searching movies with title: "${title}" and genre: "${genre}"`);
+  console.log(`API URL: ${apiUrl}`);
   fetch(apiUrl)
     .then((response) => {
       if (!response.ok) {
