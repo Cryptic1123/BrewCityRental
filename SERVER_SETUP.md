@@ -17,7 +17,7 @@ npm install
    ```
 DB_HOST=localhost
 DB_USER=u423329802_root
-DB_PASSWORD=h#UCukv2zCp@*t5
+DB_PASSWORD=BrewCityCapstone2026
 DB_NAME=u423329802_brewcity
 PORT=3306
    ```
