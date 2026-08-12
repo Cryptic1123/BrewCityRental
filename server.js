@@ -1,3 +1,5 @@
+import mysql from "mysql2/promise";
+
 const express = require("express");
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
@@ -17,10 +19,10 @@ app.use(express.static("."));
 
 // MySQL Connection Pool
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "root",
-  database: process.env.DB_NAME || "brewcity",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -1287,8 +1289,11 @@ app.listen(PORT, () => {
   console.log(
     `║   http://localhost:${PORT}${" ".repeat(13 - PORT.toString().length)}║`,
   );
-  console.log(`║   Database: brewcity               ║`);
+  console.log(`║   Database: ${process.env.DB_NAME}               ║`);
   console.log(`╚════════════════════════════════════╝\n`);
 });
 
 module.exports = app;
+
+export default app;
+export default pool;
