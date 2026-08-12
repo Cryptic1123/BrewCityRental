@@ -51,9 +51,10 @@ pool
       "  Default connection: localhost, user: root, password: (empty)",
     );
   });
-
+app.use(express.static(process.cwd()));
 app.get("/", (req, res) => {
   res.send("BCR Prototype Server is running.");
+  res.sendFile(path.join(process.cwd(), "index.html"));
 });
 
 app.get("/api/health", (req, res) => {
