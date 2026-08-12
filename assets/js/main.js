@@ -603,13 +603,27 @@ try {
             return;
         }
         alert("Rental checkout completed successfully!");
+        // Clear JavaScript data
         checkoutItems = [];
-        //window.selectedCustomer = null;
-        document.getElementById("customerID").value = "";
-        document.getElementById("customerName").textContent = "";
-        document.getElementById("customerBalance").textContent = "";
-        document.getElementById("paymentMethod").value = "";
-        document.getElementById("itemID").value = "";
+        window.selectedCustomer = null;
+
+        document.getElementById("customerLookup").value = "";
+
+        document.getElementById("selectedCustomerName").textContent = "";
+        document.getElementById("selectedCustomerBalance").textContent = "";
+        document.getElementById("customerInfo").style.display = "none";
+
+        document.getElementById("dvdScan").value = "";
+
+        document.getElementById("checkoutItems").innerHTML = "";
+
+        document.getElementById("dvdCount").textContent = "0";
+        document.getElementById("dueDate").textContent = "";
+        document.getElementById("subtotal").textContent = "0.00";
+        document.getElementById("taxAmount").textContent = "0.00";
+        document.getElementById("checkoutBalance").textContent = "0.00";
+        document.getElementById("totalAmount").textContent = "0.00";
+
         renderCheckoutItems();
     } catch (error) {
         console.error("Checkout error:", error);
