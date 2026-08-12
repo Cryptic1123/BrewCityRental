@@ -23,12 +23,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("."));
 
-console.log({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  database: process.env.DB_NAME,
-  passwordLoaded: process.env.DB_PASSWORD
-});
 
 // MySQL Connection Pool
 const pool = mysql.createPool({
