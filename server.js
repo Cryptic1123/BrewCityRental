@@ -15,7 +15,7 @@ import crypto from "crypto";
 //require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(cors());
@@ -46,9 +46,7 @@ pool
     console.error("Database connection failed:", error.message);
   });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`BCR Prototype Server Running on port ${PORT}`)
-});
+
 app.get("/api/customers", async (req, res) => {
   try {
     const connection = await pool.getConnection();
@@ -1283,11 +1281,12 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(3000,"0.0.0.0", () => {
+
   console.log(`\n╔════════════════════════════════════╗`);
   console.log(`║   BCR Prototype Server Running     ║`);
   console.log(
-    `║   http://localhost:${PORT}${" ".repeat(13 - PORT.toString().length)}║`,
+    `║   http://localhost:3000${" ".repeat(13 - "3000".toString().length)}║`,
   );
   console.log(`║   Database: ${process.env.DB_NAME}               ║`);
   console.log(`╚════════════════════════════════════╝\n`);
