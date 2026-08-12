@@ -582,19 +582,39 @@ async function findCustomer() {
 }
 
 async function completeCheckout() {
-  const response = await fetch("/api/checkout", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      CustomerID: window.selectedCustomer.CustomerID,
-      EmployeeID: 1,
-      Items: checkoutItems.map((x) => x.ItemID),
-      PaymentMethod: document.getElementById("paymentMethod").value,
-    }),
-  });
-  const result = await response.json();
+try {
+        const response = await fetch("/api/checkout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                CustomerID: window.selectedCustomer.CustomerID,
+                EmployeeID: 1,
+                Items: checkoutItems.map((x) => x.ItemID),
+                PaymentMethod: document.getElementById("paymentMethod").value,
+            }),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            alert(result.error || "Checkout could not be completed.");
+            return;
+        }
+        alert("Rental checkout completed successfully!");
+        checkoutItems = [];
+        window.selectedCustomer = null;
+        document.getElementById("customerID").value = "";
+        document.getElementById("customerName").textContent = "";
+        document.getElementById("customerBalance").textContent = "";
+        document.getElementById("paymentMethod").value = "";
+        document.getElementById("itemID").value = "";
+        renderCheckoutItems();
+    } catch (error) {
+        console.error("Checkout error:", error);
+        alert("An error occurred while completing the checkout.");
+    }
 }
 
 function setDefaultDueDate() {
