@@ -1428,6 +1428,7 @@ if (
 // Load page-specific functionality
 
 function initializePageSpecific(page) {
+  console.log(`Initializing page-specific functionality for: ${page}`);
   switch (page) {
     case "login.html":
       initializeLogin();
@@ -1466,6 +1467,7 @@ function initializePageSpecific(page) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
   updateNavLinksBasedOnLoginStatus();
   initializeNavbar();
   const currentPage = window.location.pathname.split("/").pop();
