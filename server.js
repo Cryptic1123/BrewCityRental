@@ -1,18 +1,11 @@
 
 
-//const express = require("express");
 import express from "express";
-//const mysql = require("mysql2/promise");
 import mysql from "mysql2/promise";
-//const bodyParser = require("body-parser");
 import bodyParser from "body-parser";
-//const cors = require("cors");
 import cors from "cors";
-//const bcrypt = require("bcryptjs");
-import bycrypt from "bcryptjs";
-//const crypto = require("crypto");
+import bcrypt from "bcryptjs";
 import crypto from "crypto";
-//require("dotenv").config();
 import path from "path";
 
 const app = express();
@@ -56,7 +49,7 @@ pool
 app.use(express.static(process.cwd()));
 app.get("/", (req, res) => {
   res.send("BCR Prototype Server is running.");
-  res.sendFile(path.join(process.cwd(), "index.html"));
+  res.sendFile(path.join(process.cwd(), "Index.html"));
 });
 
 app.get("/api/health", (req, res) => {
