@@ -1299,6 +1299,5 @@ app.listen(PORT, () => {
   console.log(`╚════════════════════════════════════╝\n`);
 });
 
-module.exports = app;
-
-export default pool;
+//module.exports = app;
+export default {app, pool};
