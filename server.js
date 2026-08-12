@@ -27,7 +27,7 @@ console.log({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   database: process.env.DB_NAME,
-  passwordLoaded: Boolean(process.env.DB_PASSWORD)
+  passwordLoaded: process.env.DB_PASSWORD
 });
 
 // MySQL Connection Pool
