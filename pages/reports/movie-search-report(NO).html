@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search Report - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="reports-dashboard.html">Reports</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Movie Search Report</h1>
+        
+        <div class="report-filters" style="background-color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+            <h2>Filter Options</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div class="form-group">
+                    <label for="dateFrom">From Date:</label>
+                    <input type="date" id="dateFrom">
+                </div>
+                <div class="form-group">
+                    <label for="dateTo">To Date:</label>
+                    <input type="date" id="dateTo">
+                </div>
+                <div style="display: flex; align-items: flex-end;">
+                    <button class="btn btn-primary" style="width: 100%;">Generate Report</button>
+                </div>
+            </div>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Search Query</th>
+                    <th>Search Type</th>
+                    <th>Frequency</th>
+                    <th>Results Found</th>
+                    <th>Average Results</th>
+                </tr>
+            </thead>
+            <tbody id="movieSearchTable">
+                <tr>
+                    <td colspan="5" style="text-align: center; padding: 2rem; color: #999;">
+                        Click "Generate Report" to display data
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

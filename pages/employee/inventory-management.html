@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="inventory-management.html" class="active">Inventory</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Inventory Management</h1>
+        <div class="action-buttons">
+            <button class="btn btn-primary" id="addCopyBtn">
+                Add DVD Copy
+            </button>
+        </div>
+<div class="search-section">
+    <input
+        type="text"
+        id="inventorySearch"
+        placeholder="Search movie title...">
+</div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Movie Title</th>
+                    <th>Status</th>
+                    <th>Purchase Date</th>
+                    <th>Cost</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTable">
+            </tbody>
+        </table>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+        <nav class="navbar">
+        <a href="../../Index.html" class="active">Home</a>
+        <a href="../public/movie-search.html">Browse Movies</a>
+        <a href="../public/login.html">Employee Login</a>
+    </nav>
+
+  <div class="page-wrapper">
+    <div class="container">
+      <div class="login-card">
+        <h1>Create Account</h1>
+        <p class="helper-text">Enter your details to create a customer account and start renting DVDs.</p>
+
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567">
+          </div>
+
+          <div class="form-group">
+            <label for="streetAddress">Street Address</label>
+            <input id="streetAddress" name="streetAddress" type="text">
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="state">State</label>
+              <input id="state" name="state" type="text">
+            </div>
+            <div class="form-group half-width">
+              <label for="zipCode">Zip Code</label>
+              <input id="zipCode" name="zipCode" type="text">
+            </div>
+          </div>
+
+          <div class="form-group password-field">
+            <label for="password">Password</label>
+            <div class="password-input-row">
+              <input id="password" name="password" type="password" required>
+              <label class="show-password-label">
+                <input type="checkbox" id="showRegisterPassword">
+                <span>Show</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="btn btn-primary">Create Account</button>
+            <a class="btn btn-secondary" href="customer-login.html">Back to Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

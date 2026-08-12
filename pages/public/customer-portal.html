@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Portal - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../../Index.html">Home</a>
+        <a href="movie-search.html">Browse Movies</a>
+        <a href="customer-portal.html" class="active">My Rentals</a>
+        <a href="login.html" onclick="logoutCustomer(); return false;">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Customer Portal</h1>
+        <p>
+            Welcome,
+            <strong><span id="customerName"></span></strong>
+        </p>
+        <div class="portal-section">
+            <h2>Current Rentals</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Movie Title</th>
+                        <th>Rental Date</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="currentRentalsTable">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="portal-section">
+            <h2>Rental History</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Movie Title</th>
+                        <th>Rental Date</th>
+                    </tr>
+                </thead>
+                <tbody id="rentalHistoryTable">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="portal-section">
+            <h2>Wishlist</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Movie Title</th>
+                        <th>Date Added</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="wishlistTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../Index.html">Home</a>
+        <a href="movie-search.html">Browse Movies</a>
+        <a href="customer-login.html">My Account</a>
+        <a href="login.html">Login</a>
+    </nav>
+    
+    <div class="container">
+        <div class="movie-details">
+            <div class="movie-poster">
+                <!-- Movie poster image -->
+            </div>
+            <div class="movie-info">
+                <h1 id="movieTitle"></h1>
+                <p><strong>Genre(s):</strong> <span id="movieGenres"></span></p>
+                <p><strong>Rating:</strong> <span id="movieRating"></span></p>
+                <p><strong>Description:</strong></p>
+                <p id="movieDescription"></p>
+                <p><strong>Available Copies:</strong> <span id="availableCopies"></span></p>
+                <button id="reserveBtn" class="btn btn-primary">Wishlist</button>
+                <div id="reserveMessage" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

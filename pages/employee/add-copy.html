@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add DVD Copy - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="inventory-management.html">Inventory</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    <div class="container">
+        <h1>Add DVD Copy</h1>
+        <form id="addCopyForm">
+            <div class="form-group">
+                <label for="movie">Movie</label>
+                <select id="movie" required></select>
+            </div>
+            <div class="form-group">
+                <label for="purchaseDate">Purchase Date</label>
+                <input
+                    type="date"
+                    id="purchaseDate"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="cost">Cost</label>
+                <input
+                    type="number"
+                    id="cost"
+                    step="0.01"
+                    min="0"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="available" selected>Available</option>
+                    <option value="rented">Rented</option>
+                    <option value="written off">Written Off</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    Add DVD Copy
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="window.location.href='inventory-management.html'">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

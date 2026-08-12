@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="customer-management.html">Customers</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Customer Details</h1>
+        
+        <div class="customer-info">
+            <h2 id="customerName"></h2>
+            <p><strong>Customer ID:</strong> <span id="customerId"></span></p>
+            <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="customerPhone"></span></p>
+            <p><strong>Verification Status:</strong> <span id="verificationStatus"></span></p>
+            <p><strong>Outstanding Balance:</strong> $<span id="customerBalance"></span></p>
+            <button class="btn btn-primary">Edit Customer</button>
+        </div>
+        
+        <div class="rental-history">
+            <h2>Rental History</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Movie Title</th>
+                        <th>Rental Date</th>
+                        <th>Return Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="customerRentalHistory">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

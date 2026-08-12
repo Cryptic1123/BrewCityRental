@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Employee Account</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <div class="login-card">
+        <h1>Create Employee Account</h1>
+        <p class="helper-text">Only a manager or admin can create new employee accounts.</p>
+
+        <form id="employeeCreateForm">
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="firstName">First Name</label>
+              <input id="firstName" name="firstName" type="text" required>
+            </div>
+            <div class="form-group half-width">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" name="lastName" type="text" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="hireDate">Hire Date</label>
+              <input id="hireDate" name="hireDate" type="date">
+            </div>
+            <div class="form-group half-width">
+              <label for="status">Status</label>
+              <select id="status" name="status">
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="role">Employee Role</label>
+              <input id="role" name="role" type="text" placeholder="Example: Assistant Manager" required>
+            </div>
+
+            <div class="form-group half-width">
+              <label for="managerId">Manager ID</label>
+              <input id="managerId" name="managerId" type="number" min="1" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group half-width">
+              <label>
+                <input type="checkbox" id="manager" name="manager">
+                Manager Permissions
+              </label>
+            </div>
+
+            <div class="form-group half-width">
+              <label>
+                <input type="checkbox" id="admin" name="admin">
+                Administrator Permissions
+              </label>
+            </div>
+
+          </div>
+
+          <div class="form-group password-field">
+            <label for="password">Password</label>
+            <div class="password-input-row">
+              <input id="password" name="password" type="password" required>
+              <label class="show-password-label">
+                <input type="checkbox" id="showPassword">
+                <span>Show</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="btn btn-primary">Create Employee</button>
+            <a class="btn btn-secondary" href="dashboard.html">Back to Dashboard</a>
+          </div>
+        </form>
+
+        <hr style="margin:2rem 0; border-color:#e0e0e0;">
+
+        <div id="employeeResetSection">
+          <h2>Reset Employee Password</h2>
+          <p class="helper-text">Managers and admins can reset another employee's password here.</p>
+          <form id="employeeResetForm">
+            <div class="form-group">
+              <label for="resetEmployeeId">Employee ID</label>
+              <input id="resetEmployeeId" name="resetEmployeeId" type="number" min="1" required>
+            </div>
+
+            <div class="form-group password-field">
+              <label for="resetPassword">New Password</label>
+              <div class="password-input-row">
+                <input id="resetPassword" name="resetPassword" type="password" required>
+                <label class="show-password-label">
+                  <input type="checkbox" id="showResetPassword">
+                  <span>Show</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <button type="submit" class="btn btn-primary">Reset Password</button>
+              <a class="btn btn-secondary" href="dashboard.html">Back to Dashboard</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

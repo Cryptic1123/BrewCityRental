@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="user-management.html">User Management</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    <div class="container">
+        <h1>Edit Employee</h1>
+        <form id="editEmployeeForm">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                    type="text"
+                    id="firstName"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                    type="text"
+                    id="lastName"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input
+                    type="text"
+                    id="phone"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="managerID">Reports To</label>
+                <select id="managerID"></select>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <input
+                    type="text"
+                    id="role"
+                    required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input
+                        type="checkbox"
+                        id="manager">
+                    Manager
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input
+                        type="checkbox"
+                        id="admin">
+                    Administrator
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button
+                    class="btn btn-primary"
+                    type="submit">
+                    Save Changes
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="window.location.href='user-management.html'">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

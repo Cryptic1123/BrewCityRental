@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write-Off Report - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="reports-dashboard.html">Reports</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Write-Off Report</h1>
+
+        <div class="report-summary"
+            style="background-color: #f8d7da; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #dc3545;">
+            <h2 style="color: #721c24; margin-top: 0;">Summary</h2>
+            <p><strong>Total Qualified Write-off DVDs:</strong> <span id="totalWriteoffs">0</span></p>
+            <p><strong>Total Value Lost:</strong> $<span id="totalWriteoffValue">0.00</span></p>
+        </div>
+        <div style="margin-bottom:20px;">
+            <button class="btn btn-primary" onclick="printReport()">
+                Print Report
+            </button>
+        </div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>DVD ID</th>
+                    <th>Movie</th>
+                    <th>Customer</th>
+                    <th>Rental Date</th>
+                    <th>Due Date</th>
+                    <th>Days Late</th>
+                    <th>Employee</th>
+                    <th>Replacement Cost</th>
+                </tr>
+            </thead>
+
+            <tbody id="writeoffTable">
+                <tr>
+                    <td colspan="7" style="text-align: center; padding: 2rem; color: #999;">
+                        Loading...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

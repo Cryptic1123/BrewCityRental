@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals by Due Date Report - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="reports-dashboard.html">Reports</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Rentals by Due Date Report</h1>
+        <div style="margin-bottom:20px;">
+            <button class="btn btn-primary" onclick="printReport()">
+                Print Report
+            </button>
+        </div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Due Date</th>
+                    <th>Customer</th>
+                    <th>Movie</th>
+                    <th>DVD ID</th>
+                    <th>Rental Date</th>
+                    <th>Employee</th>
+                </tr>
+            </thead>
+
+            <tbody id="rentalsDueDateTable">
+                <tr>
+                    <td colspan="6" style="text-align:center;padding:2rem;">
+                        Loading report data...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

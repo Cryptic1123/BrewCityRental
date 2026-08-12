@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="system-settings.html" class="active">Settings</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    
+    <div class="container">
+        <h1>System Settings</h1>
+        
+        <form id="settingsForm" class="settings-form">
+            <div class="settings-section">
+                <h2>Rental Settings</h2>
+                <div class="form-group">
+                    <label for="dueDateLength">Default Due Date Length (days):</label>
+                    <input type="number" id="dueDateLength" name="dueDateLength" value="3">
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h2>Payment Settings</h2>
+                <div class="form-group">
+                    <label for="taxRate">Tax Rate (%):</label>
+                    <input type="number" id="taxRate" name="taxRate" step="0.01" value="6.0">
+                </div>
+                <div class="form-group">
+                    <label for="lateFee">Late Fee (per day):</label>
+                    <input type="number" id="lateFee" name="lateFee" step="0.01" value="1.50">
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h2>Rental Categories</h2>
+                <p>Configure rental pricing for different categories</p>
+                <button type="button" class="btn btn-secondary">Manage Categories</button>
+            </div>
+            
+            <div class="settings-section">
+                <h2>Payment Methods</h2>
+                <p>Configure available payment methods</p>
+                <button type="button" class="btn btn-secondary">Manage Payment Methods</button>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg">Save Settings</button>
+        </form>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

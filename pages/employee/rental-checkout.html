@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Checkout - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="rental-checkout.html" class="active">Checkout</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Rental Checkout</h1>
+
+        <div class="checkout-section">
+            <h2>Step 1: Customer Lookup</h2>
+            <div class="form-group">
+                <label for="customerLookup">Search Customer:</label>
+                <input type="text" id="customerLookup" placeholder="Enter customer name or ID...">
+                <button class="btn btn-secondary">Find Customer</button>
+            </div>
+            <div id="customerInfo" style="display: none;">
+                <p><strong>Customer:</strong> <span id="selectedCustomerName"></span></p>
+                <p><strong>Outstanding Balance:</strong> $<span id="selectedCustomerBalance"></span></p>
+            </div>
+        </div>
+
+        <div class="checkout-section">
+            <h2>Step 2: Add DVDs</h2>
+            <div class="form-group">
+                <label for="dvdScan">Enter DVD Barcode:</label>
+                <input type="text" id="dvdScan" placeholder="Enter DVD ID...">
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>DVD ID</th>
+                        <th>Movie Title</th>
+                        <th>Rental Category</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="checkoutItems">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="checkout-summary">
+            <h2>Checkout Summary</h2>
+
+            <p><strong>Number of DVDs:</strong> <span id="dvdCount">0</span></p>
+            <p><strong>Due Date:</strong> <span id="dueDate"></span></p>
+
+            <p><strong>Subtotal:</strong> $<span id="subtotal">0.00</span></p>
+            <p><strong>Tax:</strong> $<span id="taxAmount">0.00</span></p>
+            <p><strong>Outstanding Balance:</strong> $<span id="checkoutBalance">0.00</span></p>
+
+            <p><strong>Total:</strong> $<span id="totalAmount">0.00</span></p>
+
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select id="paymentMethod">
+                    <option value="Cash">Cash</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                </select>
+            </div>
+
+            <button id="completeCheckoutBtn" class="btn btn-primary btn-lg">
+                Complete Checkout
+            </button>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

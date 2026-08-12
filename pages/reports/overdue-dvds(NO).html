@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overdue DVDs Report - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="reports-dashboard.html">Reports</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Overdue DVDs Report</h1>
+        
+        <div class="report-summary" style="background-color: #fff3cd; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #ffc107;">
+            <h2 style="color: #856404; margin-top: 0;">Summary</h2>
+            <p><strong>Total Overdue DVDs:</strong> <span id="totalOverdue">0</span></p>
+            <p><strong>Total Late Fees Owed:</strong> $<span id="totalLateFees">0.00</span></p>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Movie Title</th>
+                    <th>Due Date</th>
+                    <th>Days Overdue</th>
+                    <th>Late Fee</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="overdueTable">
+                <tr>
+                    <td colspan="6" style="text-align: center; padding: 2rem; color: #999;">
+                        No overdue DVDs currently
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

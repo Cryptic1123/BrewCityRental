@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue by Category Report - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="reports-dashboard.html">Reports</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Revenue by Category Report</h1>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Rental Category</th>
+                    <th>Total Rentals</th>
+                    <th>Revenue</th>
+                    <th>Percentage of Total</th>
+                    <th>Average Revenue per Rental</th>
+                </tr>
+            </thead>
+            <tbody id="revenueByCategoryTable">
+                <tr>
+                    <td colspan="5" style="text-align: center; padding: 2rem; color: #999;">
+                        Loading report data...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Processing - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="return-processing.html" class="active">Returns</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Return Processing</h1>
+
+        <div class="return-section">
+            <h2>DVD to Return</h2>
+            <div class="form-group">
+                <label for="dvdReturn">Enter DVD ID:</label>
+                <input type="text" id="dvdReturn" placeholder="Enter DVD ID...">
+            </div>
+        </div>
+
+        <div class="return-section">
+            <h2>Return Details</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>DVD ID</th>
+                        <th>Movie Title</th>
+                        <th>Due Date</th>
+                        <th>Days Late</th>
+                        <th>Late Fee</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="returnItems">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="return-summary">
+            <h2>Return Summary</h2>
+            <p><strong>Customer:</strong> <span id="returnCustomerName"></span></p>
+            <p><strong>DVDs Returned:</strong> <span id="dvdReturnCount">0</span></p>
+            <p><strong>Total Late Fees:</strong> $<span id="totalLateFees">0.00</span></p>
+            <p><strong>Payment Required:</strong> $<span id="paymentRequired">0.00</span></p>
+
+            <div class="form-group">
+                <label for="returnPaymentMethod">Payment Method:</label>
+                <select id="returnPaymentMethod">
+                    <option value="Cash">Cash</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary btn-lg">Complete Return</button>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

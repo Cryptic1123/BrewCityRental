@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Revenue Report - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../employee/dashboard.html">Dashboard</a>
+        <a href="reports-dashboard.html">Reports</a>
+        <a href="../../Index.html">Logout</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Monthly Revenue Report</h1>
+        
+        <div class="report-filters" style="background-color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div class="form-group">
+                    <label for="revenueYear">Year:</label>
+                    <input type="number" id="revenueYear" min="2000" max="2099" value="2026">
+                </div>
+                <div style="display: flex; align-items: flex-end;">
+                    <button class="btn btn-primary" style="width: 100%;">Generate Report</button>
+                </div>
+            </div>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Rentals</th>
+                    <th>Late Fees</th>
+                    <th>Total Revenue</th>
+                    <th>Average Transaction</th>
+                </tr>
+            </thead>
+            <tbody id="monthlyRevenueTable">
+                <tr>
+                    <td colspan="5" style="text-align: center; padding: 2rem; color: #999;">
+                        Click "Generate Report" to display data
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

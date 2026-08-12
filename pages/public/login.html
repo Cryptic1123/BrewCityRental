@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+      <nav class="navbar">
+        <a href="../../Index.html" class="active">Home</a>
+        <a href="../../pages/public/movie-search.html">Browse Movies</a>
+        <a href="../../pages/public/customer-login.html">Customer Account</a>
+        <a href="../../pages/public/login.html">Employee Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="login-card">
+            <h1>Employee Login</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="employeeEmail">Email:</label>
+                    <input type="email" id="employeeEmail" name="employeeEmail" required>
+                </div>
+                <div class="form-group password-field">
+                    <label for="password">Password:</label>
+                    <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <input type="password" id="password" name="password" required>
+                        <label for="showPassword" style="font-weight:600;color:#333;cursor:pointer;display:flex;align-items:center;gap:0.35rem;margin-left:0.25rem;">
+                            <input type="checkbox" id="showPassword" aria-controls="password">
+                            <span>Show</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              <button type="button" class="btn btn-secondary" onclick="clearForm(); window.location.href='../../Index.html'">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

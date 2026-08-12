@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    
+      <nav class="navbar">
+        <a href="../../Index.html" class="active">Home</a>
+        <a href="../public/movie-search.html">Browse Movies</a>
+        <a href="../../pages/public/login.html">Employee Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="login-card">
+            <h1>Customer Login</h1>
+            <form id="customerLoginForm">
+                <div class="form-group">
+                    <label for="customerEmail">Email:</label>
+                    <input type="email" id="customerEmail" name="customerEmail" required>
+                </div>
+                <div class="form-group password-field">
+                    <label for="customerPassword">Password:</label>
+                    <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <input type="password" id="customerPassword" name="customerPassword" required>
+                        <label for="customerShowPassword" style="font-weight:600;color:#333;cursor:pointer;display:flex;align-items:center;gap:0.35rem;margin-left:0.25rem;">
+                            <input type="checkbox" id="customerShowPassword" aria-controls="customerPassword">
+                            <span>Show</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group" style="display:flex;gap:0.5rem;align-items:center;">
+                  <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+                  <a href="register.html" style="margin-left:1rem;">Create account</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('customerLoginForm').reset(); window.location.href='../../Index.html'">Cancel</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search - BCR Prototype</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../Index.html">Home</a>
+        <a href="movie-search.html" class="active">Browse Movies</a>
+        <a href="../../pages/public/customer-login.html">My Account</a>
+        <a href="../../pages/public/login.html">Employee Login</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Browse Movies</h1>
+        
+        <div class="search-section">
+            <input type="text" id="searchTitle" placeholder="Search by title...">
+            <select id="searchGenre">
+                <option value="">All Genres</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="horror">Horror</option>
+                <option value="scifi">Sci-Fi</option>
+            </select>
+            <button class="btn btn-primary" onclick="performMovieSearch()">Search</button>
+        </div>
+        
+        <div id="searchResults" style="margin-top: 2rem;">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                        <th>Available Copies</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="moviesTableBody">
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 2rem; color: #999;">
+                            Loading movies...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
