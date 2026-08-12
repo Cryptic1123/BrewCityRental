@@ -604,7 +604,7 @@ try {
         }
         alert("Rental checkout completed successfully!");
         checkoutItems = [];
-        window.selectedCustomer = null;
+        //window.selectedCustomer = null;
         document.getElementById("customerID").value = "";
         document.getElementById("customerName").textContent = "";
         document.getElementById("customerBalance").textContent = "";
