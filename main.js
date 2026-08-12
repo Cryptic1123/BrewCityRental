@@ -100,7 +100,7 @@ function initializeLogin() {
 
       const apiUrl =
         window.location.protocol === "file:"
-          ? "http://localhost:3306/api/employee/login"
+          ? "http://localhost:3000/api/employee/login"
           : `${window.location.origin}/api/employee/login`;
 
       fetch(apiUrl, {
@@ -210,7 +210,7 @@ function initializeEmployeeCreate() {
 
     const apiUrl =
       window.location.protocol === "file:"
-        ? "http://localhost:3306/api/employees"
+        ? "http://localhost:3000/api/employees"
         : `${window.location.origin}/api/employees`;
 
     fetch(apiUrl, {
@@ -249,7 +249,7 @@ function initializeEmployeeCreate() {
 
       const apiUrl =
         window.location.protocol === "file:"
-          ? "http://localhost:3306/api/employees/reset-password"
+          ? "http://localhost:3000/api/employees/reset-password"
           : `${window.location.origin}/api/employees/reset-password`;
 
       fetch(apiUrl, {
@@ -301,7 +301,7 @@ function performMovieSearch() {
 
   const apiUrl =
     window.location.protocol === "file:"
-      ? "http://localhost:3306/api/movies/search"
+      ? "http://localhost:3000/api/movies/search"
       : `${window.location.origin}/api/movies/search`;
   fetch(apiUrl)
     .then((response) => {
@@ -939,7 +939,7 @@ function logoutCustomer() {
 function loadMovieDetails(movieId) {
   const apiUrl =
     window.location.protocol === "file:"
-      ? `http://localhost:3306/api/movies/${movieId}`
+      ? `http://localhost:3000/api/movies/${movieId}`
       : `${window.location.origin}/api/movies/${movieId}`;
 
   fetch(apiUrl)
@@ -1278,7 +1278,7 @@ async function loginCustomer(e) {
   const password = document.getElementById("customerPassword").value;
   const apiUrl =
     window.location.protocol === "file:"
-      ? "http://localhost:3306/api/customer/login"
+      ? "http://localhost:3000/api/customer/login"
       : `${window.location.origin}/api/customer/login`;
   try {
     const response = await fetch(apiUrl, {
@@ -1399,7 +1399,7 @@ function handleReserve() {
 
   const apiUrl =
     window.location.protocol === "file:"
-      ? `http://localhost:3306/api/reservations`
+      ? `http://localhost:3000/api/reservations`
       : `${window.location.origin}/api/reservations`;
 
   const reservationData = {
