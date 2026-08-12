@@ -1054,7 +1054,7 @@ async function loadMovieManagement(search = "") {
     table.innerHTML = "";
 
     movies.forEach((movie) => {
-      if (movie.Status === "inactive") return; // Skip inactive movies
+      if (movie.Status === "Inactive") return; // Skip inactive movies
       table.innerHTML += `
                 <tr>
                     <td>${movie.MovieID}</td>
