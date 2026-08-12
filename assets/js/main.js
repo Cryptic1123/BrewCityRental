@@ -617,6 +617,7 @@ try {
 
         document.getElementById("checkoutItems").innerHTML = "";
 
+        renderCheckoutItems();
         document.getElementById("dvdCount").textContent = "0";
         document.getElementById("dueDate").textContent = "";
         document.getElementById("subtotal").textContent = "0.00";
@@ -624,7 +625,6 @@ try {
         document.getElementById("checkoutBalance").textContent = "0.00";
         document.getElementById("totalAmount").textContent = "0.00";
 
-        renderCheckoutItems();
     } catch (error) {
         console.error("Checkout error:", error);
         alert("An error occurred while completing the checkout.");
