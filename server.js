@@ -15,7 +15,7 @@ import crypto from "crypto";
 //require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 3000 || process.env.PORT;
 
 // Middleware
 app.use(cors());
@@ -1281,12 +1281,12 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(3000,"0.0.0.0", () => {
+app.listen(PORT,"0.0.0.0", () => {
 
   console.log(`\n╔════════════════════════════════════╗`);
   console.log(`║   BCR Prototype Server Running     ║`);
   console.log(
-    `║   http://localhost:3000${" ".repeat(13 - "3000".toString().length)}║`,
+    `║   http://localhost:${PORT}${" ".repeat(13 - PORT.toString().length)}║`,
   );
   console.log(`║   Database: ${process.env.DB_NAME}               ║`);
   console.log(`╚════════════════════════════════════╝\n`);
