@@ -52,6 +52,10 @@ pool
     );
   });
 
+app.get("/", (req, res) => {
+  res.send("BCR Prototype Server is running.");
+});
+
 app.get("/api/health", (req, res) => {
   res.json({ status: "Server is running", database: "brewcity" });
 });
