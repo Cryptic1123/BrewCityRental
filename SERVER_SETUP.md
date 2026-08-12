@@ -15,11 +15,11 @@ npm install
 2. **Configure database connection (optional):**
    Edit `.env` file with your MySQL credentials:
    ```
-   DB_HOST=localhost
-   DB_USER=root
-   DB_PASSWORD=root
-   DB_NAME=brewcity
-   PORT=3000
+DB_HOST=localhost
+DB_USER=u423329802_root
+DB_PASSWORD=h#UCukv2zCp@*t5
+DB_NAME=u423329802_brewcity
+PORT=3306
    ```
 
 3. **Ensure MySQL database exists:**
