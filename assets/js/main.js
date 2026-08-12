@@ -2,6 +2,14 @@ let checkoutItems = [];
 let returnItems = [];
 let customerBalance = 0;
 
+const API_BASE_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "";
+
+const apiUrl = `${API_BASE_URL}/api/reservations`;
+
 function formatCurrency(amount) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -98,10 +106,7 @@ function initializeLogin() {
       const email = document.getElementById("employeeEmail").value;
       const password = document.getElementById("password").value;
 
-      const apiUrl =
-        window.location.protocol === "file:"
-          ? "http://localhost:3000/api/employee/login"
-          : `${window.location.origin}/api/employee/login`;
+      const apiUrl = `${apiBaseUrl}/api/employee/login`;
 
       fetch(apiUrl, {
         method: "POST",
@@ -123,11 +128,6 @@ function initializeLogin() {
           const employee = data.employee || {};
           const employeeId =
             employee.EmployeeID || employee.employeeID || employee.id;
-          console.log("Employee login successful:", employee);
-          console.log("Employee ID:", employeeId);
-          console.log("Employee Role:", employee.Role);
-          console.log("Manager:", employee.Manager);
-          console.log("Admin:", employee.Admin);
           sessionStorage.setItem("employeeLoggedIn", "true");
           sessionStorage.setItem("employeeId", employeeId || "");
 
@@ -136,12 +136,10 @@ function initializeLogin() {
             "employeeManager",
             Number(employee.Manager) === 1 ? "1" : "0",
           );
-          console.log("Manager:", sessionStorage.getItem("employeeManager"));
           sessionStorage.setItem(
             "employeeAdmin",
             Number(employee.Admin) === 1 ? "1" : "0",
           );
-          console.log("Admin:", sessionStorage.getItem("employeeAdmin"));
           sessionStorage.setItem(
             "employeeName",
             `${employee.FirstName || ""} ${employee.LastName || ""}`.trim(),
@@ -208,10 +206,7 @@ function initializeEmployeeCreate() {
       Password: document.getElementById("password").value,
     };
 
-    const apiUrl =
-      window.location.protocol === "file:"
-        ? "http://localhost:3000/api/employees"
-        : `${window.location.origin}/api/employees`;
+    const apiUrl = `${apiBaseUrl}/api/employees`;
 
     fetch(apiUrl, {
       method: "POST",
@@ -247,10 +242,7 @@ function initializeEmployeeCreate() {
         createdByEmployeeId: Number(sessionStorage.getItem("employeeId")),
       };
 
-      const apiUrl =
-        window.location.protocol === "file:"
-          ? "http://localhost:3000/api/employees/reset-password"
-          : `${window.location.origin}/api/employees/reset-password`;
+      const apiUrl = `${apiBaseUrl}/api/employees/reset-password`;
 
       fetch(apiUrl, {
         method: "POST",
@@ -299,10 +291,7 @@ function performMovieSearch() {
   const title = document.getElementById("searchTitle")?.value || "";
   const genre = document.getElementById("searchGenre")?.value || "";
 
-  const apiUrl =
-    window.location.protocol === "file:"
-      ? "http://localhost:3000/api/movies/search"
-      : `${window.location.origin}/api/movies/search`;
+  const apiUrl = `${apiBaseUrl}/api/movies/search`;
   fetch(apiUrl)
     .then((response) => {
       if (!response.ok) {
@@ -937,10 +926,7 @@ function logoutCustomer() {
 }
 
 function loadMovieDetails(movieId) {
-  const apiUrl =
-    window.location.protocol === "file:"
-      ? `http://localhost:3000/api/movies/${movieId}`
-      : `${window.location.origin}/api/movies/${movieId}`;
+  const apiUrl = `${apiBaseUrl}/api/movies/${movieId}`;
 
   fetch(apiUrl)
     .then((response) => {
@@ -1276,10 +1262,7 @@ async function loginCustomer(e) {
   e.preventDefault();
   const email = document.getElementById("customerEmail").value;
   const password = document.getElementById("customerPassword").value;
-  const apiUrl =
-    window.location.protocol === "file:"
-      ? "http://localhost:3000/api/customer/login"
-      : `${window.location.origin}/api/customer/login`;
+  const apiUrl = `${apiBaseUrl}/api/customer/login`;
   try {
     const response = await fetch(apiUrl, {
       method: "POST",
@@ -1394,13 +1377,10 @@ function handleReserve() {
 
   if (!movieId) {
     showReserveMessage("Error: Movie ID not found.", "error");
-    return;
+    return;path
   }
 
-  const apiUrl =
-    window.location.protocol === "file:"
-      ? `http://localhost:3000/api/reservations`
-      : `${window.location.origin}/api/reservations`;
+  const apiUrl = `${apiBaseUrl}/api/reservations`;
 
   const reservationData = {
     customer_id: customerID,
