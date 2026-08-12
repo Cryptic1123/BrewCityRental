@@ -496,6 +496,8 @@ app.post("/api/checkout", async (req, res) => {
             WHERE inventory.ItemID IN (?) AND inventory.Status = 'available'`,
       [Items],
     );
+    console.log("Price Rows:", priceRows);
+    console.log("Items:", Items);
     if (priceRows.length !== Items.length) {
       throw new Error("One or more DVDs are unavailable.");
     }
