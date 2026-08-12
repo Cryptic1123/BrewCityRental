@@ -1,11 +1,17 @@
 
 
-const express = require("express");
-const mysql = require("mysql2/promise");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const bcrypt = require("bcryptjs");
-const crypto = require("crypto");
+//const express = require("express");
+import express from "express";
+//const mysql = require("mysql2/promise");
+import mysql from "mysql2/promise";
+//const bodyParser = require("body-parser");
+import bodyParser from "body-parser";
+//const cors = require("cors");
+import cors from "cors";
+//const bcrypt = require("bcryptjs");
+import bycrypt from "bcryptjs";
+//const crypto = require("crypto");
+import crypto from "crypto";
 //require("dotenv").config();
 
 const app = express();
